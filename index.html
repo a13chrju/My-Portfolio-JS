@@ -67,25 +67,25 @@
         function loadContent() {
             // let path = window.location.pathname.replace('/', '');
             console.log("pathname" + path);
-            let path = parts.filter(Boolean).pop();
+            let path = "My-Portfolio-JS/" + parts.filter(Boolean).pop();
             console.log(last);
             window.scrollTo(0, 0);
-            if (!path || path === 'index.html') {
+            if (!path || path === 'My-Portfolio-JS/index.html') {
                 includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html');
                 includeHTML('#content', 'https://a13chrju.github.io/My-Portfolio-JS/home.html');
                // document.querySelector("#content").innerHTML = "";  // default page
                 document.body.className = '';
             }
             else {
-                if (path === "about") {
+                if (path === "My-Portfolio-JS/about") {
                     includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/aboutHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("about"); 
-                } else if (path === "portfolio") {
+                } else if (path === "My-Portfolio-JS/portfolio") {
                     includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/portfolioHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("portfolio");  
-                } else if (path === "skillset") {
+                } else if (path === "My-Portfolio-JS/skillset") {
                     includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/skillsetHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("skillset");  
