@@ -58,12 +58,12 @@
         }
 
         // Load content Header
-        includeHTML('#contentHeader', 'header/indexHeader.html');
-        includeHTML('#content', 'home.html');
+        includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html');
+        includeHTML('#content', 'https://a13chrju.github.io/My-Portfolio-JS/home.html');
 
         // Load header and footer once
-        includeHTML('#menu', 'header.html');
-        includeHTML('#footer', 'footer.html');
+        includeHTML('#menu', 'https://a13chrju.github.io/My-Portfolio-JS/header.html');
+        includeHTML('#footer', 'https://a13chrju.github.io/My-Portfolio-JS/footer.html');
 
         // Load content based on URL path
         function loadContent() {
@@ -73,22 +73,22 @@
             console.log(path);
             window.scrollTo(0, 0);
             if (!path || path === 'My-Portfolio-JS/index.html') {
-                includeHTML('#contentHeader', 'header/indexHeader.html');
+                includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html');
                 includeHTML('#content', 'home.html');
                // document.querySelector("#content").innerHTML = "";  // default page
                 document.body.className = '';
             }
             else {
                 if (path === "My-Portfolio-JS/about") {
-                    includeHTML('#contentHeader', 'header/aboutHeader.html');
+                    includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/aboutHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("about"); 
                 } else if (path === "My-Portfolio-JS/portfolio") {
-                    includeHTML('#contentHeader', 'header/portfolioHeader.html');
+                    includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/portfolioHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("portfolio");  
                 } else if (path === "My-Portfolio-JS/skillset") {
-                    includeHTML('#contentHeader', 'header/skillsetHeader.html');
+                    includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/skillsetHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("skillset");  
                 }
