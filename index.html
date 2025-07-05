@@ -42,7 +42,7 @@
     <script>
         // Function to load HTML partials
 
-        /*
+        
         function includeHTML(selector, file) {
             fetch(file)
                 .then(res => {
@@ -70,25 +70,25 @@
             // let path = window.location.pathname.replace('/', '');
             const parts = window.location.pathname.split('/');
             let path = "My-Portfolio-JS/" + parts.filter(Boolean).pop();
-            //console.log("pathname" + path);
+            console.log(path);
             window.scrollTo(0, 0);
             if (!path || path === 'My-Portfolio-JS/index.html') {
-                includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html');
-                includeHTML('#content', 'https://a13chrju.github.io/My-Portfolio-JS/home.html');
+                includeHTML('#contentHeader', 'header/indexHeader.html');
+                includeHTML('#content', 'home.html');
                // document.querySelector("#content").innerHTML = "";  // default page
                 document.body.className = '';
             }
             else {
                 if (path === "My-Portfolio-JS/about") {
-                    includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/aboutHeader.html');
+                    includeHTML('#contentHeader', 'header/aboutHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("about"); 
                 } else if (path === "My-Portfolio-JS/portfolio") {
-                    includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/portfolioHeader.html');
+                    includeHTML('#contentHeader', 'header/portfolioHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("portfolio");  
                 } else if (path === "My-Portfolio-JS/skillset") {
-                    includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/skillsetHeader.html');
+                    includeHTML('#contentHeader', 'header/skillsetHeader.html');
                     document.body.className = '';
                     document.querySelector("body").classList.add("skillset");  
                 }
@@ -98,7 +98,7 @@
         }
 
         loadContent();
-        */
+        
 
         // Handle clicks on menu links (event delegation)
         document.addEventListener('click', e => {
