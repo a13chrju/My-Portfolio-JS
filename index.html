@@ -66,9 +66,8 @@
         // Load content based on URL path
         function loadContent() {
             // let path = window.location.pathname.replace('/', '');
-            console.log("pathname" + path);
             let path = "My-Portfolio-JS/" + parts.filter(Boolean).pop();
-            console.log(last);
+            //console.log("pathname" + path);
             window.scrollTo(0, 0);
             if (!path || path === 'My-Portfolio-JS/index.html') {
                 includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html');
