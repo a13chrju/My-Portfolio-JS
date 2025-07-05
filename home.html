@@ -1,0 +1,159 @@
+﻿<!---->
+<section class="section-padding wow fadeInUp delay-05s" id="AboutMe">
+    <div class="container">
+        <div class="row white">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                    <!---<h2 class="head-title black cursive">Om mig</h2>-->
+
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-12">
+
+                            <p class="sec-para fit-middle">
+                                Hej, jag är en person som gillar problemlösning. Intresset för att skapa saker har alltid funnits hos mig.
+                                Utöver att programmera mot webben har jag även ett intresse för att redigera film.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding wow fadeInUp delay-05s my-game-section" id="AboutMethree">
+    <div class="container">
+        <div class="row white">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                    <h2 class="sub-headline">Några av mina egenutvecklade webbsidor som jag hostar</h2>
+                    <div class="med-spacer"></div>
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-12">
+
+
+                            <div class="row" *ngif="posts.length &gt; 0">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="card">
+                                        <img src="assets/CVSite.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h2 class="card-title">Denna webbsidan</h2>
+                                            <p class="card-text">
+                                            Ursprungligen byggd av mig i Angular men jag la över det till en .Net webbapplikation med MVC.
+                                            Men för att kunna hosta gratis gjorde jag den sedan även i en plain js applikation.
+                                            Byggd år 2017.</p>
+                                            <div class="card__tags">
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    Javascript
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    html
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    css
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    SPA
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    bootstrap
+                                                </div>
+                                                <div class="small-spacer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="card">
+                                        <img src="assets/futureMovies.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h2 class="card-title">MovieYear</h2>
+                                            <p class="card-text">Använder themoviedb för att hämta filmer som kommer ut under året.
+                                            Har aven tidslinjer för varje månad, film trailers etc. Byggd år 2020. inte optimerad men ett kul projekt.</p>
+                                            <div class="card__tags">
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    Javascript
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    html
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    scss / css
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    themoviedb api
+                                                </div>
+                                                <div class="alert alert-success movetagleft margintagleft">
+                                                    imdb api
+                                                </div>
+                                                <div class="small-spacer"></div>
+                                                <a href="https://a13chrju.github.io/FutureMoviesJS/" target="_blank" rel="noopener noreferrer">
+                                                    <button class="btn btn-primary" >Öppna upp</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-padding section-padding--top-none animated wow fadeInUp delay-05s">
+    <div class="container">
+        <div class="row white">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                    <h2 id="newtabid" class="sub-headline sub-headline--gamedev">Håller även på med lite Spelutveckling</h2>
+                    <div class="med-spacer"></div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-7 order-md-5">
+                            <video controls class="img-fluid" oncanplay="this.play()" onloadedmetadata="this.muted = true">
+                                <source src="assets/myGame.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                        <div class="col-sm-6 col-md-5 order-md-7">
+                            <div class='l-quote quote'>
+                                <blockquote>
+
+                                    <div class="alert alert-success movetagleft margintagleft">
+                                        C#
+                                    </div>
+
+                                    <div class="alert alert-success movetagleft margintagleft">
+                                        Unity 3D
+                                    </div>
+
+
+                                    <div class="alert alert-success movetagleft margintagleft">
+                                        Blender
+                                    </div>
+
+
+                                    <div class="alert alert-success movetagleft margintagleft">
+                                        Photoshop
+                                    </div>
+                                    <div style="clear: both;"></div>
+
+                                    <p class="movetagleft" style="padding: 35px 0px;">
+                                        Bara ett litet spelprojekt som jag har byggt, med saker som stöd för nätverksanslutningar över ett lokalt nätvärk (Mirror).
+                                    </p>
+                                    <div style="clear: both;"></div>
+
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

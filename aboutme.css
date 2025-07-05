@@ -1,0 +1,79 @@
+﻿.inline-block {
+    display: inline-block;
+}
+
+#mynavbar {
+    padding: 20px 0px;
+}
+
+#Kompetenser .sub-headline {
+    color: #389889 !important;
+    line-height: 2.5em;
+}
+
+body.about .main-header {
+    background: black url(assets/notebook-1280538_1280.jpg) no-repeat;
+    background-size: cover;
+    min-height: 410px;
+}
+
+.about .alert {
+    padding: 7px 15px;
+}
+
+.about .alert-success {
+    margin-left: 15px;
+}
+
+#Kompetenser h2 {
+    font-size: 18px;
+}
+
+#Kompetenser {
+    padding-bottom: 20px;
+}
+
+#Kompetenser, .section-black {
+    background-color: #191919;
+}
+
+    #Kompetenser h2 {
+        color: #b9b9b9;
+    }
+
+.spanskill {
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.meter {
+    height: 20px;
+    background-color: #389889;
+    transition: 1s width;
+}
+
+.meter.show {
+    width: 0%;
+}
+
+#Kompetenser .skillrow, #kompetenser-about .skillrow {
+    padding: 20px 60px;
+}
+
+@media (max-width: 991px) {
+    .skillrow {
+        padding: 20px 0px;
+    }
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.section-title .sub-headline.sub-headline--kompetenser {
+    padding: 0;
+}

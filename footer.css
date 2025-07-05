@@ -1,0 +1,79 @@
+﻿/* padding: 30px 0px 80px 0px;
+ */
+#AboutMe {
+    background: #2d2d2d;
+}
+/* @import "node_modules/compass-mixins/lib/compass/css3";
+ */
+body {
+    background: #f5f5f5;
+}
+
+blockquote, p {
+    margin: 0;
+    padding: 0;
+}
+
+.l-quote {
+    position: relative;
+    padding: 25px 25px 20px;
+    margin: 0px;
+    color: #585858;
+    background: #e6e6e6;
+}
+
+    .l-quote p {
+        color: #585858;
+    }
+
+.quote {
+    /* @include transform(skewX(-15deg));
+	 */
+}
+
+    .quote:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 25px;
+        border-width: 30px 30px 0 0;
+        border-style: solid;
+        border-color: #e6e6e6 transparent;
+    }
+
+.alert-success {
+    color: #ddfeff;
+    background-color: #4a9da0;
+    border-color: #1d6e71;
+}
+
+.skillrow {
+    padding: 30px 0px;
+}
+
+.sub-headline {
+    text-transform: uppercase;
+    color: #498486 !important;
+    line-height: unset !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.newtab {
+    margin-left: 10px;
+    color: #3c81ae;
+}
+/*
+#newtabid:hover {
+    color: #7fccff !important;
+}
+
+#newtabid {
+    cursor: pointer;
+}
+*/
+
+#footer a {
+    font-size: 16px;
+    color: #4a9da0;
+}

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Christopher Jubell CV</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="MainStyles.css?v=234">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <style>
+        .main-header {
+            background: black url(assets/office.jpg) no-repeat;
+            background-size: cover;
+            min-height: 410px;
+        }
+
+        a.plain-btn {
+            padding: 9px 36px;
+            border-radius: unset;
+        }
+    </style>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <link rel="stylesheet" type="text/css" href="animations.css">
+    <link rel="stylesheet" type="text/css" href="aboutme.css?v=234">
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <link rel="stylesheet" type="text/css" href="footer.css?v=234">
+    <link rel="stylesheet" type="text/css" href="skillset.css">
+</head>
+<body>
+    <header class="main-header" id="header">
+        <div id="menu"></div>
+        <div id="contentHeader"></div>
+    </header>
+    <div id="aboutMe"></div>
+    <div id="content"></div>
+    <footer id="footer"></footer>
+
+    <script>
+        // Function to load HTML partials
+        function includeHTML(selector, file) {
+            fetch(file)
+                .then(res => {
+                    if (!res.ok) throw new Error('Page not found');
+                    return res.text();
+                })
+                .then(data => {
+                    document.querySelector(selector).innerHTML = data;
+                })
+                .catch(() => {
+                    //   document.querySelector(selector).innerHTML = "<p>Page not found.</p>";
+                });
+        }
+
+        // Load content Header
+        includeHTML('#contentHeader', 'header/indexHeader.html');
+        includeHTML('#content', 'home.html');
+
+        // Load header and footer once
+        includeHTML('#menu', 'header.html');
+        includeHTML('#footer', 'footer.html');
+
+        // Load content based on URL path
+        function loadContent() {
+            let path = window.location.pathname.replace('/', '');
+            console.log(window.location.pathname);
+            window.scrollTo(0, 0);
+            if (!path || path === 'index.html') {
+                includeHTML('#contentHeader', 'header/indexHeader.html');
+                includeHTML('#content', 'home.html');
+               // document.querySelector("#content").innerHTML = "";  // default page
+                document.body.className = '';
+            }
+            else {
+                if (path === "about") {
+                    includeHTML('#contentHeader', 'header/aboutHeader.html');
+                    document.body.className = '';
+                    document.querySelector("body").classList.add("about"); 
+                } else if (path === "portfolio") {
+                    includeHTML('#contentHeader', 'header/portfolioHeader.html');
+                    document.body.className = '';
+                    document.querySelector("body").classList.add("portfolio");  
+                } else if (path === "skillset") {
+                    includeHTML('#contentHeader', 'header/skillsetHeader.html');
+                    document.body.className = '';
+                    document.querySelector("body").classList.add("skillset");  
+                }
+                path += '.html';
+                includeHTML('#content', path);
+            }
+        }
+
+        loadContent();
+
+        // Handle clicks on menu links (event delegation)
+        document.addEventListener('click', e => {
+            const target = e.target;
+            if (target.tagName === 'A' && target.closest('#menu')) {
+                e.preventDefault();
+                const href = target.getAttribute('href');
+                window.history.pushState(null, '', href);  // change URL without reload
+                loadContent();
+            }
+        });
+
+        setTimeout(() => {
+            // Handle clicks on menu links (event delegation)
+            document.getElementById("menuHamburgerBtn").addEventListener('click', e => {
+                console.log(e.target);
+                const target = document.getElementById("menuHamburgerBtn").querySelector(".animated-icon3");
+                const menuContent = document.getElementById("navbarSupportedContent22");
+
+                if (!target.classList.contains("open")) {
+                    target.classList.add("open");
+                    menuContent.classList.add("show");
+                } else {
+                    target.classList.remove("open");
+                    menuContent.classList.remove("show");
+                }
+            });
+        }, 1000);
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', loadContent);
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const meterItems = document.querySelectorAll('.meter');
+            meterItems.forEach((item) => {
+                const elementTop = item.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight - 0; // adjust for when to trigger
+
+                if (elementTop < triggerPoint) {
+                    item.classList.remove("show");
+                } else {
+                    if (!item.classList.contains("show")) {
+                        item.classList.add("show");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
