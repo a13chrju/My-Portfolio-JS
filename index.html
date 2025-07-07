@@ -67,15 +67,12 @@
 
         // Load content based on URL path
         function loadContent() {
-            // let path = window.location.pathname.replace('/', '');
-            const parts = window.location.pathname.split('/');
-            let path = parts.filter(Boolean).pop();
+            let path = window.location.hash ? window.location.hash.slice(1) : '';
             console.log(path);
             window.scrollTo(0, 0);
             if (!path || path === 'index.html' || path === 'My-Portfolio-JS') {
                 includeHTML('#contentHeader', 'header/indexHeader.html');
                 includeHTML('#content', 'home.html');
-                // document.querySelector("#content").innerHTML = "";  // default page
                 document.body.className = '';
             }
             else {
@@ -92,7 +89,7 @@
                     document.body.className = '';
                     document.querySelector("body").classList.add("skillset");
                 }
-                path = "" + path + '.html';
+                path += '.html';
                 includeHTML('#content', path);
             }
         }
@@ -105,11 +102,16 @@
             const target = e.target;
             if (target.tagName === 'A' && target.closest('#menu')) {
                 e.preventDefault();
+                // Only pushState if it's a hash link, else ignore
                 const href = target.getAttribute('href');
-                window.history.pushState(null, '', href);  // change URL without reload
-                loadContent();
+                if (href.startsWith('#')) {
+                    window.location.hash = href;
+                    loadContent();
+                }
             }
         });
+
+        window.addEventListener('hashchange', loadContent);
 
         setTimeout(() => {
             // Handle clicks on menu links (event delegation)
