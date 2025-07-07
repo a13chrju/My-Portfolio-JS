@@ -42,7 +42,7 @@
     <script>
         // Function to load HTML partials
 
-        
+
         function includeHTML(selector, file) {
             fetch(file)
                 .then(res => {
@@ -75,22 +75,22 @@
             if (!path || path === 'index.html' || path === 'My-Portfolio-JS') {
                 includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html');
                 includeHTML('#content', 'https://a13chrju.github.io/My-Portfolio-JS/home.html');
-               // document.querySelector("#content").innerHTML = "";  // default page
+                // document.querySelector("#content").innerHTML = "";  // default page
                 document.body.className = '';
             }
             else {
                 if (path === "about") {
                     includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/aboutHeader.html');
                     document.body.className = '';
-                    document.querySelector("body").classList.add("about"); 
+                    document.querySelector("body").classList.add("about");
                 } else if (path === "portfolio") {
                     includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/portfolioHeader.html');
                     document.body.className = '';
-                    document.querySelector("body").classList.add("portfolio");  
+                    document.querySelector("body").classList.add("portfolio");
                 } else if (path === "skillset") {
                     includeHTML('#contentHeader', 'https://a13chrju.github.io/My-Portfolio-JS/header/skillsetHeader.html');
                     document.body.className = '';
-                    document.querySelector("body").classList.add("skillset");  
+                    document.querySelector("body").classList.add("skillset");
                 }
                 path = "https://a13chrju.github.io/My-Portfolio-JS/" + path + '.html';
                 includeHTML('#content', path);
@@ -98,7 +98,7 @@
         }
 
         loadContent();
-        
+
 
         // Handle clicks on menu links (event delegation)
         document.addEventListener('click', e => {
@@ -130,8 +130,6 @@
 
         // Handle browser back/forward buttons
         window.addEventListener('popstate', loadContent);
-    </script>
-    <script>
         window.addEventListener('scroll', function () {
             const meterItems = document.querySelectorAll('.meter');
             meterItems.forEach((item) => {
@@ -147,6 +145,20 @@
                 }
             });
         });
+
+        const preloadImages = [
+            "https://a13chrju.github.io/My-Portfolio-JS/header/aboutHeader.html",
+            "https://a13chrju.github.io/My-Portfolio-JS/header/portfolioHeader.html",
+            "https://a13chrju.github.io/My-Portfolio-JS/header/skillsetHeader.html",
+            "https://a13chrju.github.io/My-Portfolio-JS/header/indexHeader.html"
+        ];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+
     </script>
 </body>
 </html>
