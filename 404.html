@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+      // Preserve path
+      var path = window.location.pathname;
+      var query = window.location.search || '';
+      var hash = window.location.hash || '';
+
+      // Redirect to index.html and let SPA JS handle it
+      window.location.replace('/index.html?redirect=' + encodeURIComponent(path + query + hash));
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
